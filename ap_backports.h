@@ -1,3 +1,8 @@
+#if (APR_MAJOR_VERSION < 1) || ((APR_MAJOR_VERSION == 1) && (APR_MINOR_VERSION < 5))
+#  include "unixd.h"
+#  define ap_unixd_set_global_mutex_perms unixd_set_global_mutex_perms
+#endif
+
 /**
  * This macro is not present in Apache HTTP server version 2.2.3 
  * Red-Hat 5 / CentOS 5
